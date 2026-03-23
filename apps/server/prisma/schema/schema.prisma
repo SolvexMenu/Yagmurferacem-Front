@@ -1,0 +1,13 @@
+generator client {
+  provider     = "prisma-client-js"
+  output       = "../generated"
+  moduleFormat = "esm"
+  runtime      = "bun"
+  // binaryTargets = ["native", "linux-musl", "debian-openssl-3.0.x"]
+  engineType = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

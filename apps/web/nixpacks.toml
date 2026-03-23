@@ -1,0 +1,12 @@
+[phases.install]
+cmds = [
+  'bun install --include=optional --force'
+]
+
+[phases.build]
+cmds = [
+  'bun run build'
+]
+
+[start]
+cmd = 'bun dev'
