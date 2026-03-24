@@ -365,6 +365,7 @@ function OrderForm() {
       email: session?.user?.email || data.customerEmail!,
       name: session?.user?.name || data.customerName!,
       phone: data.phoneNumber,
+      notes: data.notes,
       products: paytrProducts,
       totalPrice: totalWithShipping,
     });
