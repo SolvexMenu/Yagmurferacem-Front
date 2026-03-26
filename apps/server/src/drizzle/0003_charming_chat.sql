@@ -1,1 +1,0 @@
-ALTER TABLE "banners" ADD COLUMN "shippingPrice" integer DEFAULT 75 NOT NULL;
