@@ -281,7 +281,7 @@ export const orderRouter = {
     updateOrderStatus: protectedProcedure
         .input(z.object({
             orderId: z.string(),
-            status: z.enum(['PENDING', 'CONFIRMED', 'SHIPPED', 'DELIVERED', 'CANCELLED']),
+            status: z.enum(['PENDING', 'COMPLETED', 'CONFIRMED', 'SHIPPED', 'DELIVERED', 'CANCELLED']),
             trackingId: z.string().optional()
         }))
         .handler(async ({ input }) => {
@@ -349,6 +349,10 @@ export const orderRouter = {
                     'DELIVERED': {
                         title: '🎉 Sipariş Teslim Edildi',
                         body: 'Siparişiniz başarıyla teslim edildi. Teşekkür ederiz!'
+                    },
+                    'COMPLETED': {
+                        title: '✅ Sipariş Tamamlandı',
+                        body: 'Siparişiniz başarıyla tamamlandı. Bizi tercih ettiğiniz için teşekkür ederiz!'
                     },
                     'CANCELLED': {
                         title: '❌ Sipariş İptal Edildi',

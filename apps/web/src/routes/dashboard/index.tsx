@@ -71,7 +71,7 @@ function RouteComponent() {
   };
 
   return (
-    <div className="p-8 w-1/2 mx-auto">
+    <div className="p-4 md:w-2/3 lg:w-2/3 mx-auto" >
       <div className="bg-white rounded-lg shadow p-6 mb-6">
         <h2 className="text-xl font-semibold mb-4">Carousel Bannerları</h2>
 

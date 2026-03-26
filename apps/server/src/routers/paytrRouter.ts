@@ -33,6 +33,7 @@ export const paytrRouter = {
             }).array().nonempty(),
             phone: z.string(),
             address: z.string(),
+            notes: z.string().optional(),
             userIp: z.string().optional()
         }))
         .handler(async ({ input, context }) => {
@@ -86,6 +87,11 @@ export const paytrRouter = {
                 trackingId: crypto.randomUUID(),
                 shippingAddress: input.address,
                 phoneNumber: input.phone,
+                notes: JSON.stringify({
+                    customerName: input.name,
+                    customerEmail: input.email,
+                    originalNotes: input.notes || ""
+                }),
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString()
             });

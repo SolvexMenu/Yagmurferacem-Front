@@ -324,7 +324,7 @@ function RouteComponent() {
                                         <ProductCard
                                             key={product.id}
                                             id={`${product.id}`}
-                                            img={product.imageUrls[0]}
+                                            img={product.imageUrls?.[0] || ""}
                                             name={product.name}
                                             price={product.discount ? `${product.price - (product.price * product.discount / 100)}` : `${product.price}`}
                                             imageClass='object-contain'
